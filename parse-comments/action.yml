@@ -16,15 +16,25 @@ runs:
   using: "composite"
   steps:
     - name: Dump GitHub context
-      id: github_context_step
+      shell: bash
       run: echo '${{ toJSON(github) }}'
+
     - name: Dump job context
       run: echo '${{ toJSON(job) }}'
+      shell: bash
+
     - name: Dump steps context
       run: echo '${{ toJSON(steps) }}'
+      shell: bash
+
     - name: Dump runner context
       run: echo '${{ toJSON(runner) }}'
+      shell: bash
+
     - name: Dump strategy context
       run: echo '${{ toJSON(strategy) }}'
+      shell: bash
+
     - name: Dump matrix context
       run: echo '${{ toJSON(matrix) }}'
+      shell: bash
